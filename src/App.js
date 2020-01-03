@@ -3,13 +3,16 @@ import Users from './components/users/Users';
 import UserProfile from './components/users/UserProfile';
 import Navbar from './components/layout/Navbar';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   state = {
     users: [],
-    user: null
+    user: null,
+    img: 'https://source.unsplash.com/1600x900/?people'
   };
 
   async componentDidMount() {
@@ -22,10 +25,8 @@ class App extends Component {
     const res = await axios.get(
       `https://jsonplaceholder.typicode.com/users/${id}`
     );
-    this.setState({ user: res.data });
+    this.setState({ user: res.data, img: this.state.img });
   };
-
-  showUserDetails = () => {};
 
   render = () => {
     return (
@@ -39,10 +40,19 @@ class App extends Component {
                 path='/user-app/'
                 render={props => (
                   <Fragment>
-                    <Users
-                      users={this.state.users}
-                      showUserDetails={this.showUserDetails}
-                    />
+                    <Box m={2} />
+                    <Grid
+                      spacing={2}
+                      container
+                      direction='row'
+                      alignItems='center'
+                      justify='center'
+                    >
+                      <Users
+                        users={this.state.users}
+                        showUserDetails={this.showUserDetails}
+                      />
+                    </Grid>
                   </Fragment>
                 )}
               />
@@ -54,6 +64,7 @@ class App extends Component {
                     {...props}
                     user={this.state.user}
                     getUser={this.getUser}
+                    img={this.state.img}
                   />
                 )}
               />
