@@ -12,7 +12,7 @@ export const UserProfile = ({ user, getUser, match }) => {
   const { name, username, email, address, phone, website, company } = user;
   return (
     <div>
-      <Link to='/'>Go Back</Link>
+      <Link to='/user-app'>Go Back</Link>
       <p>
         <strong>Name:</strong> {name}
       </p>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const UserItem = ({ user, showUserDetails }) => {
-  return <Link to={`/user/${user.id}`}>{user.username}</Link>;
+  return <Link to={`user-app/user/${user.id}`}>{user.username}</Link>;
 };
 
 export default UserItem;
