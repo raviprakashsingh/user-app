@@ -18,11 +18,12 @@ export const UserProfile = ({ user, getUser, match, img }) => {
   return (
     <div>
       <Box m={2} />
-      <Button variant='contained' color='secondary'>
-        <Link to='/user-app' style={{ textDecoration: 'none', color: 'white' }}>
+
+      <Link to='/user-app' style={{ textDecoration: 'none', color: 'white' }}>
+        <Button variant='contained' color='secondary'>
           Go Back
-        </Link>
-      </Button>
+        </Button>
+      </Link>
       <Box m={2} />
       <Grid container spacing={3}>
         <Grid item xs={6}>
