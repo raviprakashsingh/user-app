@@ -36,7 +36,7 @@ class App extends Component {
             <Switch>
               <Route
                 exact
-                path='/'
+                path='/user-app/'
                 render={props => (
                   <Fragment>
                     <Users
@@ -48,7 +48,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path='/user/:id'
+                path='/user-app/user/:id'
                 render={props => (
                   <UserProfile
                     {...props}
